@@ -11,6 +11,8 @@ var redisTaskManager = new RedisTaskManager({
 });
 
 //inserts into db, returns status
+
+
 redisTaskManager.Task.add('add-connection', ['alex@1.com', 'alex@3.com', 'alex@2.com'], {
   company: 'Australia'
 }, function() {});
