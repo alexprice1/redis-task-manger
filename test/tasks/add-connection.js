@@ -1,18 +1,26 @@
+
+var sendgrid = require('sendgrid')('app11605236@heroku.com', 'kl0bxcba');
+
 module.exports = {
   options: {
     allowContext: true
   },
   task: {
-    execute: function(email, context, finish) {
-      finish(context.company + ' sent an email to ' + email + '.');
+    execute: function(email, context, callback) {
+      setTimeout(function() {
+        callback(context.company + ' sent an email to ' + email + '.');
+      }, 2000);
     },
     error: function() {
 
     }
   },
   finish: {
-    execute: function(confirmations) {
-    //generateReport
+    execute: function(finishedItems, originalEmails, context, callback) {
+      console.log(finishedItems, 'done');
+      callback();
+      return;
+
     },
     error: function() {
       //return 

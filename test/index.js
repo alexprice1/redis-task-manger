@@ -9,10 +9,9 @@ var redisTaskManager = new RedisTaskManager({
     database: 0,
   }
 });
-
 //inserts into db, returns status
-
-
-redisTaskManager.Task.add('add-connection', ['alex@1.com', 'alex@3.com', 'alex@2.com'], {
+redisTaskManager.add('add-connection', ['alex@1.com', 'alex@3.com', 'alex@2.com'], {
   company: 'Australia'
-}, function() {});
+}, function() {
+  console.log('added');
+});
