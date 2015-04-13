@@ -1,6 +1,3 @@
-
-var sendgrid = require('sendgrid')('app11605236@heroku.com', 'kl0bxcba');
-
 module.exports = {
   options: {
     allowContext: true
